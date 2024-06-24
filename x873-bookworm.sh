@@ -1,5 +1,5 @@
-#IMPORTANT! This script is only for the x873 /X878
-#x873 x878 Powering on /reboot /full shutdown through hardware
+#IMPORTANT! This script is only for the x873 v2.0
+#x873 v2.0 Powering on /reboot /full shutdown through hardware
 #!/bin/bash
 
     sudo sed -e '/shutdown/ s/^#*/#/' -i /etc/rc.local
