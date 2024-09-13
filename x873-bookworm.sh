@@ -56,17 +56,8 @@ BUTTON=535
 echo "$BUTTON" > /sys/class/gpio/export;
 echo "out" > /sys/class/gpio/gpio$BUTTON/direction
 echo "1" > /sys/class/gpio/gpio$BUTTON/value
-
-SLEEP=${1:-4}
-
-re='^[0-9\.]+$'
-if ! [[ $SLEEP =~ $re ]] ; then
-   echo "error: sleep time not a number" >&2; exit 1
-fi
-
-echo "X873 Shutting down..."
-/bin/sleep $SLEEP
-
+echo "Shutting down..."
+sleep 2
 echo "0" > /sys/class/gpio/gpio$BUTTON/value
 ' > /usr/local/bin/x873softsd.sh
 sudo chmod +x /usr/local/bin/x873softsd.sh
